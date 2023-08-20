@@ -9,12 +9,16 @@ print(f'2° {formula2}')
 
 
 def formula_size(formula):
+
     if isinstance(formula, Atom):
         return 1
+    
     elif isinstance(formula, Not):
         return 1 + formula_size(formula.inner)
+    
     elif isinstance(formula, And) or isinstance(formula, Or) or isinstance(formula, Implies) :
         return 1 + formula_size(formula.left) + formula_size(formula.right)
+    
     else:
         return 0  
     
