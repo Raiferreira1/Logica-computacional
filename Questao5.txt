@@ -1,0 +1,17 @@
+5. Conforme a definição de fórmula da lógica proposicional, os conectivos binários devem
+ser escritos na forma infixa, ou seja, devem ser escritos entre duas formulas. Essa
+definição poderia ser modificada possibilitando escrever os conectivos na notação
+polonesa, conforme indicado pelas correspondencias a seguir:
+
+
+• A formula A atomica corresponde à formula A na notaçao polonesa,
+• (¬A) corresponde à ¬A,
+• (A ∧ B) corresponde à ∧AB,
+• (A ∨ B) corresponde à ∨AB,
+• (A → B) corresponde à → AB.
+
+As f ormulas a seguir est ̃ao na nota ̧c ̃ao polonesa. Reescreva-as na nota ̧c ̃ao convencio-
+nal:
+
+(a) ∨ → p q → r → ∨ p q ¬ s  RESPOSTA:    ((p → q)  V  (r → ((p V q ) → (¬s)) ))
+(b) → → p q ∨ → p q → ¬ r r   RESPOSTA:      ((p → q ) →  (  (p → q) V ( ¬r → r)))

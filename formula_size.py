@@ -28,7 +28,7 @@ def formula_size(formula):
     elif isinstance(formula, Not):
         return 1 + formula_size(formula.inner)
     
-    elif isinstance(formula, And) or isinstance(formula, Or) or isinstance(formula, Implies) :
+    elif isinstance(formula, (Implies,Or,And)):
         return 1 + formula_size(formula.left) + formula_size(formula.right)
     
     else:

@@ -29,7 +29,7 @@ def get_formulas_atoms(formula):
     elif isinstance(formula, Not):
         return get_formulas_atoms(formula.inner)
 
-    elif isinstance(formula, Implies)  or isinstance(formula, And) or isinstance(formula, Or):
+    elif isinstance(formula, (Implies,Or,And)):
         return get_formulas_atoms(formula.left) | get_formulas_atoms(formula.right)
         
     else:
@@ -54,7 +54,7 @@ def get_formulas_atoms(formula):
         formulas_atoms = get_formulas_atoms(formula.inner)
         return formulas_atoms
     
-    elif isinstance(formula, Implies)  or isinstance(formula, And) or isinstance(formula, Or):
+    elif isinstance(formula, (Implies, Or,And)):
         formulas_atoms = set()
         formulas_atoms.update(get_formulas_atoms(formula.left))
         formulas_atoms.update(get_formulas_atoms(formula.right))

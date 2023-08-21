@@ -33,7 +33,7 @@ def count_connectives(formula):
     elif  isinstance(formula, Not):
         return 1 + count_connectives(formula.inner)
     
-    elif isinstance(formula, Implies) or isinstance(formula, And) or isinstance(formula, Or):
+    elif isinstance(formula, (Implies,Or,And)):
 
         return 1 + count_connectives(formula.left) + count_connectives(formula.right)
     else:

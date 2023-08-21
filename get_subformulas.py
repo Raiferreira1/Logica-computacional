@@ -24,14 +24,14 @@ def get_subformulas(formula):
     elif isinstance(formula, Not):
         return {formula} | get_subformulas(formula.inner)
     
-    elif isinstance(formula, Implies)  or isinstance(formula, And) or isinstance(formula, Or):
+    elif isinstance(formula, (Implies,Or,And)) :
         return {formula} | get_subformulas(formula.left) | get_subformulas(formula.right)
         
     else:
         return{None}
 
 
-subs = get_subformulas(22)
+subs = get_subformulas(formula1)
 
 for subformula in subs:
     print(subformula)
@@ -48,7 +48,7 @@ def get_subformulas(formula):
         subformulas.add(formula)  
         return subformulas
     
-    elif isinstance(formula, Implies)  or isinstance(formula, And) or isinstance(formula, Or):
+    elif isinstance(formula, (Or,And,Implies)):
 
         subformulas = {formula}
         subformulas.update(get_subformulas(formula.left))
