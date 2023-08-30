@@ -1,4 +1,5 @@
-from Formula import *
+from Formula import * 
+
 
 formula1 = Or(Atom('p'), Atom('l'))
 formula2 = Implies(Atom('s'), Or(Atom('p'), Atom('s')))
